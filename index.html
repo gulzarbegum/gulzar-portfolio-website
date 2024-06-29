@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gulzar Begum - Portfolio</title>
+    <link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        /* Reset and basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f5f5f5;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+
+        .navbar .title {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 24px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin-right: 20px;
+        }
+
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .navbar ul li a:hover {
+            color: #973C61;
+        }
+
+        /* Main section styles */
+        .main {
+            padding-top: 80px;
+        }
+
+        .main h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .main h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #973C61;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .main p {
+            font-size: 16px;
+            text-align: center; /* Justify text */
+            text-justify: center; /* Handle justification better */
+            margin-bottom: 40px;
+        }
+
+        .btn-box {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        .btn-box a {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #97556f;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-box a:hover {
+            background-color: #3d071d;
+        }
+
+        /* About section styles */
+        .about {
+            background-color: #fff;
+            padding: 50px 20px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .about h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .about p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.8;
+            text-align: center; /* Justify text */
+            text-justify: center; /* Handle justification better */
+            margin-bottom: 40px;
+        }
+
+        /* Certifications slideshow */
+        .slideshow-container {
+            max-width: 800px;
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        .mySlides img {
+            width: 100%;
+            vertical-align: middle;
+        }
+
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active {
+            background-color: #717171;
+        }
+
+        /* Contact section */
+        .contact {
+            background-color: #333;
+            color: #fff;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .contact .icons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .contact .icons a {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 24px;
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact .icons a:hover {
+            color: #973C61;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #4f3d44;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        footer .designer {
+            font-weight: bold;
+            color: #97556f;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .navbar .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar ul {
+                flex-direction: column;
+                padding: 0;
+            }
+
+            .navbar ul li {
+                margin: 10px 0;
+            }
+
+            .main h1 {
+                font-size: 28px;
+            }
+
+            .main h3 {
+                font-size: 20px;
+            }
+
+            .about h2 {
+                font-size: 28px;
+            }
+
+            .about p {
+                font-size: 14px;
+            }
+
+            .slideshow-container {
+                max-width: 100%;
+                margin-bottom: 30px;
+            }
+
+            .contact .icons {
+                flex-wrap: wrap;
+            }
+
+            .contact .icons a {
+                margin: 10px 5px;
+            }
+
+            .main .container,
+            .about .container {
+                padding: 0 10px; /* Adjust padding for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <a href="#" class="title">Gulzar Begum</a>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#connect">Connect</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main" id="home">
+        <div class="container">
+            <h1>Hey, This is Gulzar Begum.</h1>
+            <h3>A Computer Science Engineering Student.</h3>
+            <p>I am a dedicated Computer Science Engineering Student with a specialization in IoT & Cyber Security including Blockchain Technology. I am eager to learn and implement things that improve my knowledge and seek experiences that enhance my relevant skills.</p>
+            <div class="btn-box">
+                <a href="#">Connect with me</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="about" id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I am passionate about technology and constantly seeking to improve my skills in IoT, Cyber Security, and Blockchain Technology. My journey in Computer Science Engineering has been focused on learning and applying practical knowledge in these fields.</p>
+        </div>
+    </div>
+
+    <div class="slideshow-container">
+        <div class="mySlides">
+            <img src="cerf1.jpg" alt="Certification 1">
+        </div>
+        <div class="mySlides">
+            <img src="cerf2.jpg" alt="Certification 2">
+        </div>
+        <div class="mySlides">
+            <img src="cerf5.jpg" alt="Certification 3">
+        </div>
+        <div class="mySlides">
+            <img src="cerf4.jpg" alt="Certification 4">
+        </div>
+        <br>
+        <div style="text-align:center">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+
+    <div class="contact" id="connect">
+        <div class="container">
+            <h2>Connect with Me</h2>
+            <div class="icons">
+                <a href="https://t.me/Gul1234567zar"><i class='bx bxl-telegram'></i></a>
+                <a href="https://medium.com/@gul19790205"><i class='bx bxl-medium-old'></i></a>
+                <a href="https://www.linkedin.com/in/gulzar-begum-36b638255/"><i class='bx bxl-linkedin'></i></a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Designed by <span class="designer">Gulzar Begum</span></p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 2000);
+        }
+    </script>
+</body>
+</html>
