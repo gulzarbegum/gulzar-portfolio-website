@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,12 +30,9 @@
             z-index: 1000;
             top: 0;
             left: 0;
-        }
-
-        .navbar .container {
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
             padding: 10px 20px;
         }
 
@@ -43,6 +41,17 @@
             font-size: 24px;
             text-decoration: none;
             color: #fff;
+        }
+
+        .navbar .menu-icon {
+            display: none;
+            font-size: 28px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .navbar nav {
+            display: flex;
         }
 
         .navbar ul {
@@ -67,7 +76,7 @@
 
         /* Main section styles */
         .main {
-            padding-top: 80px;
+            padding-top: 100px;
         }
 
         .main h1 {
@@ -88,8 +97,7 @@
 
         .main p {
             font-size: 16px;
-            text-align: center; /* Justify text */
-            text-justify: center; /* Handle justification better */
+            text-align: center;
             margin-bottom: 40px;
         }
 
@@ -133,8 +141,7 @@
             font-size: 16px;
             color: #666;
             line-height: 1.8;
-            text-align: center; /* Justify text */
-            text-justify: center; /* Handle justification better */
+            text-align: center;
             margin-bottom: 40px;
         }
 
@@ -215,68 +222,52 @@
         }
 
         @media only screen and (max-width: 768px) {
-            .navbar .container {
+            .navbar nav {
+                display: none;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                background-color: #333;
+                border-radius: 5px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                width: 200px;
                 flex-direction: column;
-                align-items: flex-start;
+            }
+
+            .navbar .menu-icon {
+                display: block;
+            }
+
+            .navbar.open nav {
+                display: flex;
             }
 
             .navbar ul {
                 flex-direction: column;
-                padding: 0;
+                width: 100%;
+                padding: 10px 0;
             }
 
             .navbar ul li {
                 margin: 10px 0;
-            }
-
-            .main h1 {
-                font-size: 28px;
-            }
-
-            .main h3 {
-                font-size: 20px;
-            }
-
-            .about h2 {
-                font-size: 28px;
-            }
-
-            .about p {
-                font-size: 14px;
-            }
-
-            .slideshow-container {
-                max-width: 100%;
-                margin-bottom: 30px;
-            }
-
-            .contact .icons {
-                flex-wrap: wrap;
-            }
-
-            .contact .icons a {
-                margin: 10px 5px;
-            }
-
-            .main .container,
-            .about .container {
-                padding: 0 10px; /* Adjust padding for smaller screens */
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
     <header class="navbar">
-        <div class="container">
-            <a href="#" class="title">Gulzar Begum</a>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#connect">Connect</a></li>
-                </ul>
-            </nav>
+        <a href="#" class="title">Gulzar Begum</a>
+        <div class="menu-icon" onclick="toggleMenu(event)">
+            <i class='bx bx-menu'></i>
         </div>
+        <nav>
+            <ul>
+                <li><a href="#home" onclick="closeMenu()">Home</a></li>
+                <li><a href="#about" onclick="closeMenu()">About</a></li>
+                <li><a href="#connect" onclick="closeMenu()">Connect</a></li>
+            </ul>
+        </nav>
     </header>
 
     <div class="main" id="home">
@@ -331,7 +322,9 @@
     </div>
 
     <footer>
-        <p>&copy; 2024 Designed by <span class="designer">Gulzar Begum</span></p>
+        <p>&copy; 2024
+
+ Designed by <span class="designer">Gulzar Begum</span></p>
     </footer>
 
     <script>
@@ -353,6 +346,27 @@
             dots[slideIndex - 1].className += " active";
             setTimeout(showSlides, 2000);
         }
+
+        function toggleMenu(event) {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('open');
+            event.stopPropagation();
+        }
+
+        function closeMenu() {
+            const navbar = document.querySelector('.navbar');
+            if (navbar.classList.contains('open')) {
+                navbar.classList.remove('open');
+            }
+        }
+
+        document.addEventListener('click', function(event) {
+            const isClickInside = document.querySelector('.navbar').contains(event.target);
+            if (!isClickInside) {
+                closeMenu();
+            }
+        });
     </script>
 </body>
 </html>
+```
