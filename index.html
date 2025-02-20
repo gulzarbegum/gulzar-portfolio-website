@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gulzar Begum - Portfolio</title>
-    <link rel="icon" href="now.png" type="image/x-icon">
+    <link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
         /* Reset and basic styles */
@@ -29,9 +29,12 @@
             z-index: 1000;
             top: 0;
             left: 0;
+        }
+
+        .navbar .container {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
             padding: 10px 20px;
         }
 
@@ -40,17 +43,6 @@
             font-size: 24px;
             text-decoration: none;
             color: #fff;
-        }
-
-        .navbar .menu-icon {
-            display: none;
-            font-size: 28px;
-            color: #fff;
-            cursor: pointer;
-        }
-
-        .navbar nav {
-            display: flex;
         }
 
         .navbar ul {
@@ -75,7 +67,7 @@
 
         /* Main section styles */
         .main {
-            padding-top: 100px;
+            padding-top: 80px;
         }
 
         .main h1 {
@@ -96,7 +88,8 @@
 
         .main p {
             font-size: 16px;
-            text-align: center;
+            text-align: center; /* Justify text */
+            text-justify: center; /* Handle justification better */
             margin-bottom: 40px;
         }
 
@@ -140,7 +133,8 @@
             font-size: 16px;
             color: #666;
             line-height: 1.8;
-            text-align: center;
+            text-align: center; /* Justify text */
+            text-justify: center; /* Handle justification better */
             margin-bottom: 40px;
         }
 
@@ -221,52 +215,110 @@
         }
 
         @media only screen and (max-width: 768px) {
-            .navbar nav {
-                display: none;
-                position: absolute;
-                top: 60px;
-                right: 20px;
-                background-color: #333;
-                border-radius: 5px;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-                width: 200px;
+            .navbar .container {
                 flex-direction: column;
-            }
-
-            .navbar .menu-icon {
-                display: block;
-            }
-
-            .navbar.open nav {
-                display: flex;
+                align-items: flex-start;
             }
 
             .navbar ul {
                 flex-direction: column;
-                width: 100%;
-                padding: 10px 0;
+                padding: 0;
             }
 
             .navbar ul li {
                 margin: 10px 0;
-                text-align: center;
+            }
+
+            .main h1 {
+                font-size: 28px;
+            }
+
+            .main h3 {
+                font-size: 20px;
+            }
+
+            .about h2 {
+                font-size: 28px;
+            }
+
+            .about p {
+                font-size: 14px;
+            }
+
+            .slideshow-container {
+                max-width: 100%;
+                margin-bottom: 30px;
+            }
+
+            .contact .icons {
+                flex-wrap: wrap;
+            }
+
+            .contact .icons a {
+                margin: 10px 5px;
+            }
+
+            .main .container,
+            .about .container {
+                padding: 0 10px; /* Adjust padding for smaller screens */
             }
         }
+
+        .projects-section {
+            text-align: center;
+            padding: 50px;
+            background: #f5f5f5;
+        }
+    
+        .projects-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+    
+        .project-card {
+            width: 300px;
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+    
+        .project-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+    
+        .project-card img:hover {
+            transform: scale(1.05);
+        }
+    
+        .project-card h3 {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+        
     </style>
 </head>
 <body>
     <header class="navbar">
-        <a href="#" class="title">Gulzar Begum</a>
-        <div class="menu-icon" onclick="toggleMenu(event)">
-            <i class='bx bx-menu'></i>
+        <div class="container">
+            <a href="#" class="title">Gulzar Begum</a>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#connect">Connect</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#home" onclick="closeMenu()">Home</a></li>
-                <li><a href="#about" onclick="closeMenu()">About</a></li>
-                <li><a href="#connect" onclick="closeMenu()">Connect</a></li>
-            </ul>
-        </nav>
     </header>
 
     <div class="main" id="home">
@@ -275,7 +327,7 @@
             <h3>A Computer Science Engineering Student.</h3>
             <p>I am a dedicated Computer Science Engineering Student with a specialization in IoT & Cyber Security including Blockchain Technology. I am eager to learn and implement things that improve my knowledge and seek experiences that enhance my relevant skills.</p>
             <div class="btn-box">
-                <a href="https://gulzar.vercel.app/">Connect with me</a>
+                <a href="#">Connect with me</a>
             </div>
         </div>
     </div>
@@ -289,25 +341,45 @@
 
     <div class="slideshow-container">
         <div class="mySlides">
-            <img src="cerf1.jpg" alt="Certification 1">
+            <img src="NLcerf.png" alt="Certification 1">
         </div>
         <div class="mySlides">
-            <img src="cerf2.jpg" alt="Certification 2">
+            <img src="Mongodbcerf.png" alt="Certification 2">
         </div>
         <div class="mySlides">
-            <img src="cerf5.jpg" alt="Certification 3">
-        </div>
-        <div class="mySlides">
-            <img src="cerf4.jpg" alt="Certification 4">
+            <img src="DScerf.png" alt="Certification 3">
         </div>
         <br>
         <div style="text-align:center">
             <span class="dot"></span>
             <span class="dot"></span>
             <span class="dot"></span>
-            <span class="dot"></span>
         </div>
     </div>
+
+    <div class="projects-section" id="projects">
+        <h2>My Projects</h2>
+        <div class="projects-container">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <a href="https://vercel.com/gulzars-projects-ab8da09d/todolist" target="_blank">
+                    <img src="todolist.png" alt="ToDo List">
+                </a>
+                <h3>ToDo List</h3>
+            </div>
+    
+            <!-- Project 2 -->
+            <div class="project-card">
+                <a href="https://your-second-project.com" target="_blank">
+                    <img src="your-second-project-image.jpg" alt="Project 2">
+                </a>
+                <h3>Project Name 2</h3>
+            </div>
+    
+            <!-- Add More Projects Here -->
+        </div>
+    </div>
+
 
     <div class="contact" id="connect">
         <div class="container">
@@ -319,11 +391,9 @@
             </div>
         </div>
     </div>
-
+   
     <footer>
-        <p>&copy; 2024
-
- Designed by <span class="designer">Gulzar Begum</span></p>
+        <p>&copy; 2024 Designed by <span class="designer">Gulzar Begum</span></p>
     </footer>
 
     <script>
@@ -345,26 +415,6 @@
             dots[slideIndex - 1].className += " active";
             setTimeout(showSlides, 2000);
         }
-
-        function toggleMenu(event) {
-            const navbar = document.querySelector('.navbar');
-            navbar.classList.toggle('open');
-            event.stopPropagation();
-        }
-
-        function closeMenu() {
-            const navbar = document.querySelector('.navbar');
-            if (navbar.classList.contains('open')) {
-                navbar.classList.remove('open');
-            }
-        }
-
-        document.addEventListener('click', function(event) {
-            const isClickInside = document.querySelector('.navbar').contains(event.target);
-            if (!isClickInside) {
-                closeMenu();
-            }
-        });
     </script>
 </body>
 </html>
