@@ -3,225 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gulzar Begum | Cybersecurity Portfolio</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <style>
-        :root {
-            --primary-color: #00d4ff; /* Cyber Blue */
-            --bg-dark: #0a0b10;
-            --card-bg: #161b22;
-            --text-main: #e6edf3;
-            --accent: #00ff41; /* Matrix Green */
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
-
-        /* Professional Navbar */
-        .navbar {
-            background: rgba(10, 11, 16, 0.95);
-            border-bottom: 1px solid #30363d;
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            padding: 15px 0;
-        }
-
-        .container { max-width: 1100px; margin: auto; padding: 0 20px; }
-        
-        .nav-content { display: flex; justify-content: space-between; align-items: center; }
-        
-        .title { 
-            font-family: 'Courier New', Courier, monospace;
-            font-weight: bold; 
-            font-size: 1.5rem; 
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        .navbar ul { display: flex; list-style: none; }
-        .navbar ul li { margin-left: 25px; }
-        .navbar ul li a { 
-            color: var(--text-main); 
-            text-decoration: none; 
-            font-size: 0.9rem; 
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .navbar ul li a:hover { color: var(--primary-color); }
-
-        /* Hero Section - Terminal Style */
-        .hero {
-            padding: 150px 0 80px;
-            background: radial-gradient(circle at top, #1a1f2e 0%, #0a0b10 100%);
-            text-align: center;
-        }
-
-        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
-        .hero .highlight { color: var(--primary-color); }
-        
-        .terminal-text {
-            font-family: 'Courier New', monospace;
-            background: #000;
-            padding: 10px 20px;
-            border-radius: 5px;
-            display: inline-block;
-            border: 1px solid #333;
-            color: var(--accent);
-            margin-bottom: 20px;
-        }
-
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .skill-badge {
-            background: var(--card-bg);
-            border: 1px solid #30363d;
-            padding: 10px;
-            border-radius: 5px;
-            text-align: center;
-            font-size: 0.85rem;
-            transition: 0.3s;
-        }
-
-        .skill-badge:hover { border-color: var(--primary-color); transform: translateY(-3px); }
-
-        /* Projects */
-        .projects-section { padding: 80px 0; }
-        .project-card {
-            background: var(--card-bg);
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid #30363d;
-            transition: 0.3s;
-        }
-        .project-card:hover { border-color: var(--primary-color); }
-        .project-card img { width: 100%; height: 180px; object-fit: cover; }
-        .project-info { padding: 20px; }
-        .project-info h3 { color: var(--primary-color); margin-bottom: 10px; }
-
-        /* Slideshow for Certs */
-        .slideshow-container { position: relative; max-width: 600px; margin: 40px auto; border: 2px solid #30363d; border-radius: 8px;}
-        .mySlides img { width: 100%; border-radius: 8px; }
-
-        /* Footer */
-        footer { padding: 40px 0; text-align: center; border-top: 1px solid #30363d; margin-top: 50px; }
-        .social-icons a { font-size: 1.8rem; color: var(--text-main); margin: 0 15px; transition: 0.3s; }
-        .social-icons a:hover { color: var(--primary-color); }
-
-    </style>
+    <title>Your Name | Cybersecurity Specialist Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for clean security icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="container nav-content">
-            <a href="#" class="title">GULZAR_BEGUM >_</a>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Toolbox</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#connect">Contact</a></li>
-                </ul>
-            </nav>
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="container">
+            <div class="shield-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h1>Your Name</h1>
+            <p class="tagline">Cybersecurity Specialist | Specializing in Network Security, VAPT, & SOC Monitoring</p>
+            <div class="cta-links">
+                <a href="#projects" class="btn primary">View Projects</a>
+                <a href="https://linkedin.com/in/your-profile" target="_blank" class="btn secondary"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            </div>
         </div>
     </header>
 
-    <section class="hero" id="home">
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section">
         <div class="container">
-            <div class="terminal-text">C:\Users\Gulzar> status --active</div>
-            <h1>Aspiring <span class="highlight">SOC Analyst</span> & Security Researcher</h1>
-            <p style="max-width: 700px; margin: 20px auto; color: #8b949e;">
-                Specializing in Network Security, Endpoint Detection (Wazuh), and Threat Hunting. 
-                Dedicated to securing digital infrastructure through continuous monitoring and incident response.
-            </p>
-            <div style="margin-top: 30px;">
-                <a href="#connect" style="background: var(--primary-color); color: #000; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold;">SECURE CONNECTION</a>
+            <h2><i class="fa-solid fa-user-shield"></i> About Me</h2>
+            <p>Motivated Cybersecurity Engineering graduate specializing in securing network architectures, managing Linux-based environments, and analyzing complex log systems. Passionate about identifying systemic vulnerabilities and translating defensive data insights into highly effective infrastructure protections.</p>
+        </div>
+    </section>
+
+    <!-- IMPACT & MENTORSHIP BANNER -->
+    <section id="impact" class="metric-banner">
+        <div class="container">
+            <div class="metric-card">
+                <span class="number">100+</span>
+                <span class="label">Students & Peers Mentored in Tech Foundations</span>
+            </div>
+            <div class="metric-text">
+                <h3>Leadership & Technical Communication</h3>
+                <p>Conducted high-impact cybersecurity awareness and operational training sessions. Proven ability to break down complex defensive mechanics, network protocols, and terminal administrative tasks cleanly for diverse audiences.</p>
             </div>
         </div>
     </section>
 
-    <section class="container" id="skills">
-        <h2 style="text-align: center; margin-bottom: 30px;">Security Toolbox</h2>
-        <div class="skills-grid">
-            <div class="skill-badge">Wazuh (SIEM/EDR)</div>
-            <div class="skill-badge">Tshark / Tcpdump</div>
-            <div class="skill-badge">Nmap / Network Mapping</div>
-            <div class="skill-badge">Wireshark</div>
-            <div class="skill-badge">Nikto / Web Scanning</div>
-            <div class="skill-badge">Blockchain Security</div>
-            <div class="skill-badge">Linux Hardening</div>
-            <div class="skill-badge">IoT Security</div>
+    <!-- SKILLS MATRIX -->
+    <section id="skills" class="section alt-bg">
+        <div class="container">
+            <h2><i class="fa-solid fa-terminal"></i> Technical Matrix</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Defensive & Monitoring</h3>
+                    <ul>
+                        <li>Splunk (SIEM Log Analytics)</li>
+                        <li>Wireshark (Packet Analysis)</li>
+                        <li>Network Security & Subnetting</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Offensive & VAPT</h3>
+                    <ul>
+                        <li>Nmap (Network Reconnaissance)</li>
+                        <li>OWASP Top 10 Vulnerabilities</li>
+                        <li>Ettercap, Hydra, & Medusa</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Systems & Automation</h3>
+                    <ul>
+                        <li>Kali Linux Terminal Operations</li>
+                        <li>Ubuntu & Windows Administration</li>
+                        <li>Python Scripting & System Logic</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="projects-section" id="projects">
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="section">
         <div class="container">
-            <h2 style="margin-bottom: 40px;">Featured Security Projects</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            <h2><i class="fa-solid fa-code"></i> Engineering Projects</h2>
+            <div class="projects-list">
+                
                 <div class="project-card">
-                    <img src="todolist.png" alt="Project 1">
-                    <div class="project-info">
-                        <h3>Secure To-Do Application</h3>
-                        <p style="font-size: 0.9rem; color: #8b949e;">A task manager focused on data integrity and secure user input handling.</p>
-                    </div>
+                    <h3>Multi-Layered Authentication & Hardware Simulation Framework</h3>
+                    <p class="project-meta"><strong>Tools:</strong> Python, Logic Design, Hardware Emulation</p>
+                    <p>Designed and built a security application prototype configured within a simulated software ecosystem modeling a medical device (pacemaker mechanism). Implemented multi-layered authentication gates and strict MAC filtering parameters to shield local endpoints against unauthorized hardware override vectors.</p>
                 </div>
 
                 <div class="project-card">
-                    <div style="height: 180px; background: #000; display: flex; align-items: center; justify-content: center; font-family: monospace;">[ THREAT_HUNT_LOG_01 ]</div>
-                    <div class="project-info">
-                        <h3>Wazuh SIEM Lab</h3>
-                        <p style="font-size: 0.9rem; color: #8b949e;">Deploying a SOC lab to monitor brute-force attacks and file integrity changes.</p>
-                    </div>
+                    <h3>Network Packet Inspection & Vulnerability Assessment Lab</h3>
+                    <p class="project-meta"><strong>Tools:</strong> Wireshark, Nmap, Kali Linux</p>
+                    <p>Executed comprehensive network discovery audits using Nmap to chart open ports and services. Captured and parsed protocol data streams within Wireshark to locate cleartext vulnerabilities, validating configuration states against industry standard defensive baselines.</p>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <section class="container" id="about">
-        <h2 style="margin-bottom: 20px;">Certifications</h2>
-        <div class="slideshow-container">
-            <div class="mySlides"><img src="NLcerf.png"></div>
-            <div class="mySlides"><img src="Mongodbcerf.png"></div>
-            <div class="mySlides"><img src="DScerf.png"></div>
-        </div>
-    </section>
-
-    <footer id="connect">
+    <footer>
         <div class="container">
-            <h2 style="margin-bottom: 20px;">Establish Connection</h2>
-            <div class="social-icons">
-                <a href="https://t.me/Gul1234567zar"><i class='bx bxl-telegram'></i></a>
-                <a href="https://medium.com/@gul19790205"><i class='bx bxl-medium'></i></a>
-                <a href="https://www.linkedin.com/in/gulzar-begum-36b638255/"><i class='bx bxl-linkedin'></i></a>
-            </div>
-            <p style="margin-top: 30px; color: #8b949e;">&copy; 2024 | System.out.println("Gulzar Begum");</p>
+            <p>&copy; 2026 Your Name. Secured & Maintained Independently.</p>
         </div>
     </footer>
 
-    <script>
-        let slideIndex = 0;
-        showSlides();
-        function showSlides() {
-            let slides = document.getElementsByClassName("mySlides");
-            for (let i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
-            slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}
-            slides[slideIndex-1].style.display = "block";
-            setTimeout(showSlides, 3000);
-        }
-    </script>
 </body>
 </html>
